@@ -9,11 +9,16 @@ on:
 jobs:
   # This workflow contains a single job called "build"
   build:
+    env:
+        username: ${{secrets.USERNAME}}
+        pass: ${{secrets.PASS}}
+
     runs-on: ubuntu-latest
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       - name: "Mostrando evento"
         run: |
-          echo "Evento: ${{toJson(github.event)}}"
           echo "GH Actor: ${{toJson(github.actor)}}"
+          echo "Usuario: ${{env.username}}"
+          echo "Password: ${{env.pass}}"
