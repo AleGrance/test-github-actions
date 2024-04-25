@@ -16,3 +16,4 @@ jobs:
       - name: "Mostrando evento"
         run: |
           echo "Evento: ${{toJson(github.event)}}"
+          echo "GH Actor: ${{toJson(github.actor)}}"
